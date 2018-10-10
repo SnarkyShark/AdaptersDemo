@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Adapters Demo</string>
+    <string name="title_activity_canvas">Canvas Activity</string>
+    <string-array name="spinner_labels">
+        <item>Blue</item>
+        <item>Red</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>Magenta</item>
+    </string-array>
+</resources>
