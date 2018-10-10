@@ -2,7 +2,16 @@
 <resources>
     <string name="app_name">Adaptadores Demostración</string>
     <string name="title_activity_canvas">Lona Actividad</string>
+
     <string-array name="spinner_labels">
+        <item>Azul</item>
+        <item>Rojo</item>
+        <item>Amarillo</item>
+        <item>Verde</item>
+        <item>Rosado</item>
+    </string-array>
+
+    <string-array name="spinner_values">
         <item>Blue</item>
         <item>Red</item>
         <item>Yellow</item>

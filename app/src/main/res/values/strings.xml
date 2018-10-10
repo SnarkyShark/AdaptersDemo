@@ -8,4 +8,12 @@
         <item>Green</item>
         <item>Magenta</item>
     </string-array>
+
+    <string-array name="spinner_values">
+        <item>Blue</item>
+        <item>Red</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>Magenta</item>
+    </string-array>
 </resources>

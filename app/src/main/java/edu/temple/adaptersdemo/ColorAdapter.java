@@ -1,6 +1,7 @@
 package edu.temple.adaptersdemo;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,12 +10,14 @@ import android.widget.TextView;
 
 public class ColorAdapter extends BaseAdapter {
 
-    Context context;
-    String myData[];
+    private Context context;
+    private String myData[];
+    private String realData[];
 
-    public ColorAdapter(Context context, String myData[]) {
+    public ColorAdapter(Context context, String myData[], String realData[]) {
         this.context = context;
         this.myData = myData;
+        this.realData = realData;
     }
 
     @Override
@@ -40,7 +43,7 @@ public class ColorAdapter extends BaseAdapter {
         textView.setText(myData[position]);
         textView.setTextSize(22);
 
-        textView.setBackgroundColor(Color.parseColor(myData[position]));
+        textView.setBackgroundColor(Color.parseColor(realData[position]));
 
         return textView;
     }
