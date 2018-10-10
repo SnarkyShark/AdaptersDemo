@@ -3,6 +3,7 @@ package edu.temple.adaptersdemo;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,6 +34,8 @@ public class PaletteActivity extends AppCompatActivity {
         String myColors[] = res.getStringArray(R.array.spinner_labels);
         final String realColors[] = res.getStringArray(R.array.spinner_values);
 
+        final FragmentManager fm = getSupportFragmentManager();
+
         spinner = findViewById(R.id.spinner);
 
         //ArrayAdapter adapter = new ArrayAdapter(PaletteActivity.this, android.R.layout.simple_dropdown_item_1line, myColors);
@@ -55,9 +58,16 @@ public class PaletteActivity extends AppCompatActivity {
 
                     parent.setBackgroundColor(Color.parseColor(color));
 
+                    /*
                     Intent startCanvasIntent = new Intent(PaletteActivity.this, CanvasActivity.class);
                     startCanvasIntent.putExtra(COLOR_KEY, color);
-                    startActivity(startCanvasIntent);
+                    startActivity(startCanvasIntent); */
+
+                    fm.beginTransaction()
+                            .add(R.id.color_container, CanvasFragment.newInstance(Color.parseColor(color)))
+                            .addToBackStack(null)
+                            .commit();
+
                 }
                 else hasBeenSelectedOnce = true;
             }
